@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+﻿import React, { createContext, useContext, useState } from "react";
 import { AuthApi } from "../services/api";
 
 type AuthCtx = {
@@ -13,9 +13,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [token, setToken] = useState<string | null>(() => localStorage.getItem("token"));
 
   async function login(email: string, senha: string) {
-    const { token } = await AuthApi.login(email, senha);
-    localStorage.setItem("token", token);
-    setToken(token);
+    const data = await AuthApi.login(email, senha);
+    localStorage.setItem("token", data.token);
+    setToken(data.token);
   }
 
   function logout() {

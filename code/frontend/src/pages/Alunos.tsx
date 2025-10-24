@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { AlunoApi, Aluno } from "../services/api";
 import AlunoForm from "../components/AlunoForm";
 
@@ -33,8 +33,10 @@ export default function Alunos() {
           <tr key={a.id}>
             <td>{a.id}</td><td>{a.nome}</td><td>{a.email}</td><td>{a.curso}</td>
             <td>
-              <button onClick={()=>setEditing(a)}>Editar</button>
-              <button onClick={()=>remove(a.id!)}>Excluir</button>
+              <div style={{ display: "flex", gap: 8 }}>
+                <button onClick={()=>setEditing(a)}>Editar</button>
+                <button onClick={()=>remove(a.id!)}>Excluir</button>
+              </div>
             </td>
           </tr>
         ))}

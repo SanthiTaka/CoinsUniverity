@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Empresa, EmpresaApi } from "../services/api";
 import EmpresaForm from "../components/EmpresaForm";
 
@@ -31,8 +31,10 @@ export default function Empresas() {
           <tr key={e.id}>
             <td>{e.id}</td><td>{e.nome}</td><td>{e.email}</td><td>{e.cnpj}</td>
             <td>
-              <button onClick={()=>setEditing(e)}>Editar</button>
-              <button onClick={()=>remove(e.id!)}>Excluir</button>
+              <div style={{ display: "flex", gap: 8 }}>
+                <button onClick={()=>setEditing(e)}>Editar</button>
+                <button onClick={()=>remove(e.id!)}>Excluir</button>
+              </div>
             </td>
           </tr>
         ))}

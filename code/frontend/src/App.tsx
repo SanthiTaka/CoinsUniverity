@@ -1,6 +1,6 @@
-import { Link, Outlet, useNavigate } from "react-router-dom";
-import { useAuth } from "./auth/AuthContext";
+﻿import { Link, Outlet, useNavigate } from "react-router-dom";
 import Router from "./router";
+import { useAuth } from "./auth/AuthContext";
 
 export default function App() {
   const { token, logout } = useAuth();
