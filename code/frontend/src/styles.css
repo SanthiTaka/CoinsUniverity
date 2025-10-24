@@ -1,0 +1,181 @@
+:root {
+  --bg: #0f172a; /* fundo */
+  --panel: #111827; /* cartões/headers */
+  --muted: #94a3b8; /* textos secundários */
+  --text: #e5e7eb; /* textos */
+  --brand: #7c3aed; /* roxo */
+  --brand-2: #06b6d4; /* ciano */
+  --ok: #22c55e;
+  --danger: #ef4444;
+  --radius: 14px;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(
+      1200px 600px at 20% -20%,
+      rgba(124, 58, 237, 0.25),
+      transparent 60%
+    ),
+    radial-gradient(
+      1000px 500px at 120% 0%,
+      rgba(6, 182, 212, 0.15),
+      transparent 60%
+    ),
+    var(--bg);
+  color: var(--text);
+}
+
+/* ------ layout ------ */
+.app-shell {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+header.app-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
+}
+header.app-header h1 {
+  margin: 0;
+  margin-right: auto;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+}
+header.app-header a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+header.app-header a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+header.app-header button {
+  margin-left: 6px;
+}
+
+/* ------ botões ------ */
+button {
+  appearance: none;
+  border: 0;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
+  transition: transform 0.04s ease, filter 0.15s ease;
+}
+button:hover {
+  filter: brightness(1.05);
+}
+button:active {
+  transform: translateY(1px);
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: none;
+}
+
+/* ------ formulários ------ */
+form {
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+  box-shadow: var(--shadow);
+}
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  outline: none;
+}
+input:focus,
+textarea:focus {
+  border-color: rgba(124, 58, 237, 0.7);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
+}
+
+/* ------ tabelas ------ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: clip;
+  border-radius: var(--radius);
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow);
+}
+thead th {
+  text-align: left;
+  font-weight: 700;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.03);
+}
+th,
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+td .row-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ------ utilidades ------ */
+.stack {
+  display: grid;
+  gap: 16px;
+}
+.center {
+  display: grid;
+  place-items: center;
+}
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+}

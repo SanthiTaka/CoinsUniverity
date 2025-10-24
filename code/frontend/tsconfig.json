@@ -1,8 +1,20 @@
+<<<<<<< HEAD
 ﻿{
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+=======
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+>>>>>>> e3c804b8fae8a6700cdcbe8e936b83bd8148b3c0
     "module": "ESNext",
     "skipLibCheck": true,
     "strict": true,
@@ -14,5 +26,12 @@
     "jsx": "react-jsx",
     "baseUrl": "."
   },
+<<<<<<< HEAD
   "include": ["src"]
 }
+=======
+  "include": [
+    "src"
+  ]
+}
+>>>>>>> e3c804b8fae8a6700cdcbe8e936b83bd8148b3c0
